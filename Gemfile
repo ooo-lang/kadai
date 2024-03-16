@@ -26,6 +26,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Roo implements read access for all common spreadsheet types. It can handle [https://github.com/roo-rb/roo]
+gem 'roo', '~> 2.10', '>= 2.10.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
