@@ -1,12 +1,13 @@
 <div id="<%= dom_id blog %>">
-  <p>
-    <strong>Title:</strong>
-    <%= blog.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= blog.content %>
-  </p>
-
+  <tr>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+    <td>
+      <% blog.categories.each do |category| %>
+        <%= category.name %>
+      <% end %>
+    </td>
+    <td><%= blog.created_at %></td>
+    <td><%= blog.updated_at %></td>
+  </tr>
 </div>
