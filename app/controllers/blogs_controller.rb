@@ -1,16 +1,23 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy ]
 
-  # GET /blogs or /blogs.json
+  # GET /blogs
   def index
     @blogs = Blog.includes(:categories)
   end
 
-  # GET /blogs/import
+  # POST /blogs/import
   def import
-    
+    Blog.import(params[:file])
+    redirect_to root_path
   end
 
+  def show
+  end
+
+  def edit
+  end
+  
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
