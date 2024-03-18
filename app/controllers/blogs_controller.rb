@@ -1,10 +1,12 @@
 class BlogsController < ApplicationController
   # GET /blogs
+  # Blog全件取得
   def index
     @blogs = Blog.includes(:categories)
   end
 
   # POST /blogs/import
+  # CSVデータ読込
   def import
     Blog.import(params[:file])
     redirect_to root_path
